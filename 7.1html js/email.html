@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <form onsubmit="return myFun()">
+    Email: <input type="text" id="Email" value="">
+    </br>
+    <input type="submit" value="Submit"></input>
+  </form>
+
+  <script>
+
+    function myFun() {
+      let a = document.getElementById("Email").value;
+      if (a === "") {
+        alert("Email cannot be empty");
+        return false;
+      } else if (!validateEmail(a)) {
+        alert("Invalid email format");
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    function validateEmail(email) {
+
+      return email.includes("@") && email.includes(".");
+    }
+  </script>
+</body>
+
+</html>

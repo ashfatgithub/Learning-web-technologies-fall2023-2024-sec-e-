@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head> </head>
+
+<body>
+  <form onsubmit="return myFun()">
+    Name: <input type="text" id="Name" value="">
+    <span id="Message"> </span>
+    </br>
+    <input type="submit" value="Submit"></input>
+  </form>
+
+  <script>
+
+
+    function myFun() {
+      let a = document.getElementById("Name").value;
+      if (a.trim() === "") {
+        document.getElementById("Message").innerHTML = "Cannot be empty";
+        return false;
+      }
+
+      let words = a.trim().split(' ');
+      if (words.length < 2) {
+        document.getElementById("Message").innerHTML = "Should contain at least two words";
+        return false;
+      }
+
+      if (!isAllowedCharacters(a)) {
+        document.getElementById("Message").innerHTML = "Only alphabets, dots(.), or dashes(-) allowed";
+        return false;
+      }
+
+      if (!isAlpha(a.charAt(0))) {
+        document.getElementById("Message").innerHTML = "Name must start with a letter";
+        return false;
+      }
+
+      return true;
+    }
+
+    function isAlpha(ch) {
+      return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+    }
+
+    function isAllowedCharacters(input) {
+      for (let i = 0; i < input.length; i++) {
+        let ch = input.charAt(i);
+        if (!(isAlpha(ch) || ch === ' ' || ch === '.' || ch === '-')) {
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

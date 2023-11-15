@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>REGISTRATION</title>
+    <!-- Include the external JavaScript files -->
+    <script src="../jsattach/registrationcheck.js"></script>
+    <script src="../jsattach/validation.js"></script>
+</head>
+
+<body>
+    <center>
+        <form onsubmit="return jsattach/validateForm()" action="../jsattach/registrationcheck.js" method="post" enctype="">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <fieldset>
+                            <legend>
+                                <h3>REGISTRATION</h3>
+                            </legend>
+                            Name<br /><input type="text" id="name" name="name"><br />
+                            <br>
+                            User Name<br /><input type="text" id="usrname" name="usrname"><br />
+                            <br>
+                            Email<br /><input type="text" id="email" name="email"><br />
+                            <br>
+                            Mobile No<br /><input type="text" id="mobile" name="mobile"><br />
+                            <br>
+                            <fieldset>
+                                <legend>Gender</legend>
+                                <input name="gender" type="radio" value="Male">Male
+                                <input name="gender" type="radio" value="Female">Female
+                                <input name="gender" type="radio" value="Other">Other <br>
+                            </fieldset>
+                            <br>
+                            Id<br /><input type="text" id="id" name="id" value=""><br />
+                            <br>
+                            Password<br /><input type="password" id="password" name="password" value=""><br />
+                            <br>
+                            Confirm Password<br /><input type="password" id="cpassword" name="cpassword" value=""><br />
+                            <br>
+                            <hr />
+                            <br>
+                            <input type="submit" value="Sign Up">
+                            <a href="login.php">Sign In</a>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>
